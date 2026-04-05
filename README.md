@@ -7,7 +7,7 @@ Manage dotfiles using GNU Stow.
 This repo is the **source of truth**.
 Actual config or dotfiles live inside the repo and `$HOME` only contains symlinks.
 
-Stow does NOT import files automatically. You must move configs into this repo first.
+Stow does NOT import files automatically. You must move configs (only first time, when building your own dotfiles repo) into this repo first.
 
 ## example (i3)
 

@@ -205,7 +205,10 @@ bar {
 }
 
 # Set brightness level to 30%
-exec_always brightness set 30%
+exec_always --no-startup-id brightnessctl set 30%
 
 # Night Light
-exec_always xrandr --output eDP-1 --gamma 1:0.8:0.7
+exec_always --no-startup-id xrandr --output eDP-1 --gamma 1:0.8:0.7
+
+## Desktop Wallpaper
+exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/.local/share/wallpapers/*
