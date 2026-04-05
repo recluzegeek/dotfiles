@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Exporting explicit package list...
+When = PostTransaction
+Exec = /home/msi/.local/bin/export-pkgs

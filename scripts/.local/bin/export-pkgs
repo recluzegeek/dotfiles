@@ -1,0 +1,2 @@
+OUT="$HOME/sys-logs/thinkpad/arch/pkg-explicit.txt"
+pacman -Qqe | sort > "$OUT"
