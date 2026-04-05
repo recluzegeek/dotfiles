@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
-OUT="$HOME/sys-logs/thinkpad/arch/pkg-explicit.txt"
+
+# IMPORTANT: This script is triggered by a pacman hook, which runs as ROOT.
+# 1. ISSUE: Using $HOME would point to /root, causing "No such file or directory".
+#    SOLUTION: Use an absolute path to the user's home directory.
+# 2. ISSUE: Files created by root are owned by root, locking out the user.
+#    SOLUTION: Use chown to give ownership back to the user.
+
+USER="msi"
+OUT="/home/$USER/sys-logs/thinkpad/arch/pkg-explicit.txt"
+
+# Export explicitly installed packages to the log file
 pacman -Qqe | sort > "$OUT"
+
+# Ensure the $USER owns the file so they can manage it without sudo
+chown $USER:$USER "$OUT"
