@@ -214,3 +214,9 @@ exec_always --no-startup-id xrandr --output eDP-1 --gamma 1:0.8:0.7
 
 ## Desktop Wallpaper
 exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/.local/share/wallpapers/*
+
+## Start notification system
+exec_always --no-startup-id dunst
+
+## autolocks via xsecurelock after 20 mins of inactivity, and suspend after 10 mins afterwards
+exec_always --no-startup-id xautolock -detectsleep -time 20 -corners -000 -locker "/usr/bin/xsecurelock auth_pam_x11 saver_blank" -killtime 10 -killer "systemctl suspend" -notify 20 -notifier "notify-send -- 'Locking screen in 20 seconds'"
