@@ -1,0 +1,96 @@
+{
+  "theme": "Gruvbox Light Soft",
+  "icon_theme": "Zed (Default)",
+  "buffer_font_size": 12,
+  "buffer_font_family": "Symbols Nerd Font",
+  "buffer_font_features": {
+    "calt": true,
+  },
+  "disable_ai": true,
+  "format_on_save": "on",
+  "autosave": "on_window_change",
+  "tab_size": 2,
+  "telemetry": {
+    "metrics": false,
+  },
+  "project_panel": {
+    "dock": "left",
+    "git_status": true,
+  },
+  "terminal": {
+    "font_family": "Ubuntu Mono",
+    "font_size": 13,
+    "line_height": "comfortable",
+    "blinking": "on",
+    "alternate_scroll": "on",
+  },
+  "diff_view_style": "split",
+  "git": {
+    "show_stage_restore_buttons": true,
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
+    },
+    "JavaScript": {
+      "language_servers": ["vtsls", "biome"],
+      "formatter": {
+        "language_server": {
+          "name": "biome",
+        },
+      },
+    },
+    "TypeScript": {
+      "language_servers": ["vtsls", "biome"],
+      "formatter": {
+        "language_server": {
+          "name": "biome",
+        },
+      },
+    },
+    "TSX": {
+      "language_servers": ["vtsls", "biome"],
+      "formatter": {
+        "language_server": {
+          "name": "biome",
+        },
+      },
+    },
+    "JSON": {
+      "language_servers": ["biome"],
+      "formatter": {
+        "language_server": {
+          "name": "biome",
+        },
+      },
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width",
+    },
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": false,
+      },
+    },
+    "pyright": {
+      "settings": {
+        "python": {
+          "analysis": {
+            "typeCheckingMode": "standard",
+            "autoImportCompletions": true,
+          },
+        },
+      },
+    },
+  },
+}

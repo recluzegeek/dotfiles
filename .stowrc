@@ -1,0 +1,6 @@
+--target=/home/msi
+--verbose=2
+--ignore=README.md
+--ignore=hooks
+--ignore=LICENSE
+--ignore=.git
