@@ -11,6 +11,8 @@
 
 set $mod Mod4
 set $term alacritty
+# set fonts for dmenu, and clipmenu
+set $dmenu_fonts "Ubuntu Mono:pixelsize=16"
 # !!! Set the username here !!!
 set $user msi
 
@@ -41,7 +43,7 @@ bindsym $mod+shift+x exec xsecurelock
 # Clipboard history -> clipmenu
 # start the daemon if not already
 exec --no-startup-id clipmenud
-bindsym $mod+c exec clipmenu
+bindsym $mod+c exec clipmenu -fn $dmenu_fonts
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -72,7 +74,7 @@ bindsym $mod+q kill
 # horizontal layout of dmenu
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # vertical layout menu, use -l flag with 10 results max
-bindsym $mod+d exec --no-startup-id dmenu_run -l 10
+bindsym $mod+d exec --no-startup-id dmenu_run -fn $dmenu_fonts -l 10
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
