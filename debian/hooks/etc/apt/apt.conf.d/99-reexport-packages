@@ -1,0 +1,4 @@
+# /etc/apt/apt.conf.d/99-reexport-packages
+# used for building packages list, via update-packages-list.sh
+
+DPkg::Post-Invoke {"/usr/local/bin/update-package-list.sh";};
