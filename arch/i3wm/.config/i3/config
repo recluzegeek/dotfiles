@@ -220,3 +220,6 @@ exec --no-startup-id dunst
 
 ## autolocks via xsecurelock after 20 mins of inactivity, and suspend after 10 mins afterwards
 exec --no-startup-id xautolock -detectsleep -time 20 -corners -000 -locker xsecurelock auth_pam_x11 saver_blank -killtime 10 -killer "systemctl suspend" -notify 20 -notifier "notify-send -- 'System will suspend in 10 minutes'"
+
+# Sync environment variables with systemd user session for file dialogs - fixes xdg-portal-display issue
+exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP
