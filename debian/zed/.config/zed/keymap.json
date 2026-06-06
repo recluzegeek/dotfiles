@@ -1,0 +1,16 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-g p": "project_panel::ToggleFocus",
+      "ctrl-g b": "git::Branch",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-g n": "editor::MoveDown",
+      "ctrl-g u": "editor::MoveUp",
+    },
+  },
+]
