@@ -54,6 +54,9 @@ bindkey '^H'      backward-kill-word            # Ctrl + Backspace
 bindkey '^[^?'    backward-kill-word            # Alt + Backspace
 bindkey '^[[3;5~' kill-word                     # Ctrl + Delete (deletes word forward)
 
+bindkey '^[[3~' delete-char               # Standard Delete key (deletes character forward)
+bindkey '^[[3;5~' kill-word               # Ctrl + Delete (deletes entire word forward)
+
 # ==============================================================================
 # --- 4. FAST NATIVE HISTORY SEARCH (Up/Down Arrow Keys) ---
 # ==============================================================================

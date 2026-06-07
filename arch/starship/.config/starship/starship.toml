@@ -1,0 +1,35 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$lua\
+$nodejs\
+$java\
+$golang\
+$aws\
+$docker_context\
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
+
+
+[directory]
+style = 'bold cyan'
+format = '[$path]($style) '
+
+# Git properties only trigger if you are actively working in a repository
+[git_branch]
+style = 'gray'
+symbol = ' '
+format = '[$symbol$branch]($style) '
+
+[git_status]
+style = 'red'
+format = '([$all_status$ahead_behind]($style) )'
+
+[character]
+success_symbol = '[❯](purple)'
+error_symbol = '[❯](red)'
