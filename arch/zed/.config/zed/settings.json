@@ -3,7 +3,7 @@
   "theme": "Gruvbox Dark Soft",
   "icon_theme": "Zed (Default)",
   "buffer_font_size": 12,
-  "buffer_font_family": "Symbols Nerd Font",
+  "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_features": {
     "calt": true,
   },

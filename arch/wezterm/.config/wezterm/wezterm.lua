@@ -9,7 +9,10 @@ config = {
   window_decorations = "RESIZE", -- disable the title bar but enable the resizable border
   default_cursor_style = "SteadyBlock",
   color_scheme = "3024 (base16)",
-  font = wezterm.font("JetBrains Mono"),
+  font = wezterm.font_with_fallback({
+    { family = 'Iosevka Nerd Font', weight = 'Regular' },
+    { family = 'Symbols Nerd Font', weight = 'Regular' },
+  }),
   font_size = 15.0,
 
   keys = {
