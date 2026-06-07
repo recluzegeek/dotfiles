@@ -1,1 +1,4 @@
 .git/
+.zsh_history
+.zcompdump*
+.zsh_plugins.zsh

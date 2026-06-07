@@ -10,7 +10,7 @@ config = {
   default_cursor_style = "SteadyBlock",
   color_scheme = "3024 (base16)",
   font = wezterm.font("JetBrains Mono"),
-  font_size = 18.0,
+  font_size = 15.0,
 
   keys = {
     { key = "Enter", mods = "CTRL",  action = wezterm.action({ SendString = "\x1b[13;5u" }) },
