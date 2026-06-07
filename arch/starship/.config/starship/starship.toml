@@ -1,8 +1,7 @@
 format = """
+$username\
 $directory\
-$git_branch\
-$git_status\
-$fill\
+$rust\
 $python\
 $lua\
 $nodejs\
@@ -10,26 +9,56 @@ $java\
 $golang\
 $aws\
 $docker_context\
+$fill\
+$git_branch\
+$git_status\
 $jobs\
 $cmd_duration\
 $line_break\
 $character"""
 
+# 🚀 Username Block
+[username]
+show_always = true
+style_user = "bold white"
+format = "🚀 [$user]($style) in "
 
+# 📁 Directory Block (Shows full paths relative to ~)
 [directory]
 style = 'bold cyan'
-format = '[$path]($style) '
+format = '📁 [$path]($style) '
+truncation_length = 999
+truncate_to_repo = false
 
-# Git properties only trigger if you are actively working in a repository
+# Node.js Block
+[nodejs]
+style = "bold green"
+symbol = "󰎙 "
+format = "via [$symbol$version]($style) "
+
+# 🦀 Rust Language Block
+[rust]
+style = "bold red"
+symbol = "🦀 "
+format = "via [$symbol$version]($style) "
+
+# 🐍 Python Language Block
+[python]
+style = "bold yellow"
+symbol = "🐍 "
+format = "via [$symbol$version]($style) "
+
+# --- Git configuration (Pushed to the right edge via $fill) ---
 [git_branch]
 style = 'gray'
 symbol = ' '
-format = '[$symbol$branch]($style) '
+format = '[$symbol$branch](_style_)'
 
 [git_status]
 style = 'red'
-format = '([$all_status$ahead_behind]($style) )'
+format = ' ([$all_status$ahead_behind]($style))'
 
+# --- Character Prompt Input ---
 [character]
-success_symbol = '[❯](purple)'
-error_symbol = '[❯](red)'
+success_symbol = '[❯](purple) '
+error_symbol = '[❯](red) '
