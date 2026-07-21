@@ -28,8 +28,6 @@ setopt HIST_REDUCE_BLANKS      # Remove unnecessary space tabs from history stri
 # --- 2. RESTORE OUTPUT COLORS (ls, grep) ---
 export CLICOLOR=1
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
 
 # ==============================================================================
 # --- 3. STANDARD KEYMAPS & SHORTCUT FIXES ---
@@ -71,3 +69,6 @@ bindkey '^[[B' down-line-or-beginning-search
 # --- 5. STARSHIP PROMPT ---
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+# --- 6. Import Aliases ---
+[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
