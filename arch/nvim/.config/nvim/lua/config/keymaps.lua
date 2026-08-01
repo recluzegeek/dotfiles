@@ -15,3 +15,17 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Better line indenting behaviors in visual mode
 map('v', '<', '<gv', { desc = 'Indent Less' })
 map('v', '>', '>gv', { desc = 'Indent More' })
+
+local wk = require 'which-key'
+
+wk.add {
+  { '<leader>f', group = 'Find' },
+  { '<leader>g', group = 'Git' },
+  { '<leader>l', group = 'LSP' },
+  { '<leader>t', group = 'Terminal / Tasks' },
+  { '<leader>d', group = 'Debug' },
+  { '<leader>x', group = 'Diagnostics' },
+  { '<leader>p', group = 'Project' },
+  { '<leader>u', group = 'UI' },
+  { '<leader>s', group = 'Search / Session' },
+}
