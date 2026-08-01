@@ -1,26 +1,23 @@
-# keymaps
+# Keymaps
 
-Leader: Space
+Leader:
 
-## Find
+Space
 
-| Mapping      | Action       |
-| ------------ | ------------ |
-| `<leader>ff` | Find files   |
-| `<leader>fg` | Live grep    |
-| `<leader>fb` | Buffers      |
-| `<leader>fr` | Recent files |
 
-## LSP
+## Navigation
 
-| Mapping      | Action            |
-| ------------ | ----------------- |
-| `<leader>sd` | Document symbols  |
-| `<leader>sD` | Workspace symbols |
+| Key | Action |
+|-|-|
+| <leader>ff | Find files |
+| <leader>fg | Live grep |
+| <leader>fb | Find buffers |
+| <leader>fh | Search help |
 
-## Git
 
-| Mapping      | Action   |
-| ------------ | -------- |
-| `<leader>gs` | Status   |
-| `<leader>gb` | Branches |
+## Workspace
+
+| Key | Action |
+|-|-|
+| <leader>e | Explorer |
+| <leader>tt | Terminal |

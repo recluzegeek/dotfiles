@@ -10,7 +10,7 @@ function M.setup()
         },
 
         dashboard = {
-            enabled = true,
+            enabled = false,
         },
 
         explorer = {

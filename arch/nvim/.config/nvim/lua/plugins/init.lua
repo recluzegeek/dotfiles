@@ -10,6 +10,7 @@ local plugins = {
     {
         src = "https://github.com/ibhagwan/fzf-lua",
     },
+    {        src = "https://github.com/nvim-treesitter/nvim-treesitter",}
 }
 
 vim.pack.add(plugins)
