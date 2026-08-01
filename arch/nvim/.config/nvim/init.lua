@@ -8,3 +8,4 @@ require 'config.keymaps'
 require 'config.autocmds'
 
 require('plugins.ui').setup()
+require("plugins.navigation").setup()

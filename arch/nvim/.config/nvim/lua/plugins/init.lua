@@ -1,15 +1,15 @@
---- Pure strings enable Neovim's shorthand GitHub resolver natively
 local plugins = {
-  'https://github.com/folke/snacks.nvim',
-  'https://github.com/ibhagwan/fzf-lua',
-  'https://github.com/folke/which-key.nvim',
-  'http://github.com/L3MON4D3/LuaSnip',
-  'https://saghen/blink.cmp',
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/williamboman/mason.nvim',
-  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-  'https://github.com/stevearc/conform.nvim',
+    {
+        src = "https://github.com/folke/snacks.nvim",
+    },
+
+    {
+        src = "https://github.com/folke/which-key.nvim",
+    },
+
+    {
+        src = "https://github.com/ibhagwan/fzf-lua",
+    },
 }
 
--- Execute the native manager loop cleanly
 vim.pack.add(plugins)
