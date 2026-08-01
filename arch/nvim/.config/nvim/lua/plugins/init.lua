@@ -37,6 +37,12 @@ local plugins = {
   {
     src = 'https://github.com/mfussenegger/nvim-lint',
   },
+  {
+    src = 'https://github.com/windwp/nvim-autopairs',
+  },
+  {
+    src = 'https://github.com/folke/persistence.nvim',
+  },
 }
 
 vim.pack.add(plugins)

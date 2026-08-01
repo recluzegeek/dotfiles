@@ -18,6 +18,8 @@ function M.setup()
 
     gopls = {},
 
+    zls = {},
+
     pyright = {},
 
     ts_ls = {},

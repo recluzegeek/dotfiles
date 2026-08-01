@@ -13,6 +13,10 @@ function M.setup()
       'golangci-lint',
     },
 
+    zig = {
+      'zls',
+    },
+
     javascript = {
       'biomejs',
     },

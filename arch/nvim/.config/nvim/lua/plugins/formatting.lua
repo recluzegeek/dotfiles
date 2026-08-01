@@ -24,6 +24,10 @@ function M.setup()
         'gofumpt',
       },
 
+      zig = {
+        'zig_fmt',
+      },
+
       javascript = {
         'biome',
       },
