@@ -13,5 +13,5 @@ map('i', 'jj', '<Esc>', { desc = 'Exit insert mode' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Better line indenting behaviors in visual mode
-map('v', '<', '<g', { desc = 'Indent Less' })
+map('v', '<', '<gv', { desc = 'Indent Less' })
 map('v', '>', '>gv', { desc = 'Indent More' })
