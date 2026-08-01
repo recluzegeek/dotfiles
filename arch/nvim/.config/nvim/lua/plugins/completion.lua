@@ -1,72 +1,66 @@
 local M = {}
 
 function M.setup()
+  local blink = require 'blink.cmp'
 
-    local blink = require("blink.cmp")
+  blink.setup {
+    keymap = {
+      preset = 'none',
 
-    blink.setup({
-keymap = {
-    preset = "none",
+      ['<Tab>'] = {
+        'select_next',
+        'snippet_forward',
+        'fallback',
+      },
 
-    ["<Tab>"] = {
-        "select_next",
-        "snippet_forward",
-        "fallback",
+      ['<S-Tab>'] = {
+        'select_prev',
+        'snippet_backward',
+        'fallback',
+      },
+
+      ['<CR>'] = {
+        'accept',
+        'fallback',
+      },
     },
 
-    ["<S-Tab>"] = {
-        "select_prev",
-        "snippet_backward",
-        "fallback",
+    appearance = {
+      use_nvim_cmp_as_default = true,
     },
 
-    ["<CR>"] = {
-        "accept",
-        "fallback",
-    },
-},
-
-        appearance = {
-            use_nvim_cmp_as_default = true,
-        },
-
-completion = {
-    menu = {
+    completion = {
+      menu = {
         auto_show = true,
-    },
+      },
 
-    documentation = {
+      documentation = {
         auto_show = true,
-    },
+      },
 
-    trigger = {
+      trigger = {
         show_on_insert_on_trigger_character = true,
+      },
     },
-},
 
-        snippets = {
-            preset = "luasnip",
-        },
+    snippets = {
+      preset = 'luasnip',
+    },
 
+    sources = {
 
-        sources = {
+      default = {
+        'lsp',
+        'path',
+        'snippets',
+        'buffer',
+      },
+    },
 
-            default = {
-                "lsp",
-                "path",
-                "snippets",
-                "buffer",
-            },
-
-        },
-
-
-        signature = {
-            enabled = true,
-        },
-
-    })
-
+    signature = {
+      enabled = true,
+    },
+  }
 end
 
 return M

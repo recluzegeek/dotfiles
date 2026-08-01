@@ -12,7 +12,6 @@ It powers:
 - code-aware features
 - future text objects and motions
 
-
 ## Architecture
 
 Modern Neovim separates responsibilities:
@@ -72,29 +71,28 @@ to attach parsers to buffers.
 
 The plugin handles:
 
-* parser availability
-* query files
-* language support
+- parser availability
+- query files
+- language support
 
 Neovim handles:
 
-* parser startup
-* highlighting
+- parser startup
+- highlighting
 
 ## Supported languages
 
 Current parser targets:
 
-* Lua
-* Vim
-* Vimdoc
-* Bash
-* JSON
-* YAML
-* Markdown
-* Python
-* Go
-* JavaScript
-* TypeScript
-* TSX
-
+- Lua
+- Vim
+- Vimdoc
+- Bash
+- JSON
+- YAML
+- Markdown
+- Python
+- Go
+- JavaScript
+- TypeScript
+- TSX

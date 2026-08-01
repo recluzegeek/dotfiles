@@ -1,4 +1,3 @@
-
 # Formatting
 
 ## Purpose
@@ -6,7 +5,6 @@
 Formatters rewrite source code into a consistent style.
 
 Formatting is separate from LSP.
-
 
 ## Architecture
 
@@ -21,19 +19,16 @@ conform.nvim
 
 ```
 
-
 ## Current formatter stack
 
-
-| Language | Formatter |
-|-|-|
-| Lua | stylua |
-| Python | ruff format |
-| Go | gofumpt |
-| JavaScript | biome |
-| TypeScript | biome |
-| Markdown | prettier |
-
+| Language   | Formatter   |
+| ---------- | ----------- |
+| Lua        | stylua      |
+| Python     | ruff format |
+| Go         | gofumpt     |
+| JavaScript | biome       |
+| TypeScript | biome       |
+| Markdown   | prettier    |
 
 ## Why separate formatting?
 
@@ -43,18 +38,15 @@ A formatter changes code style.
 
 They solve different problems.
 
-
 Example:
 
 LSP:
 
 "where is this function defined?"
 
-
 Formatter:
 
 "should this brace be here?"
-
 
 ## Future configuration
 
@@ -63,4 +55,3 @@ Formatting will provide:
 - format on save
 - manual formatting command
 - async formatting
-

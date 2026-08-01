@@ -17,8 +17,7 @@ LuaSnip
 |
 +-- snippet expansion
 
-````
-
+```
 
 ## Sources
 
@@ -28,7 +27,6 @@ Current completion sources:
 - filesystem paths
 - snippets
 - current buffer
-
 
 ## Design
 

@@ -1,4 +1,3 @@
-
 # LSP
 
 ## Purpose
@@ -14,7 +13,6 @@ LSP handles:
 - code actions
 - semantic completion
 
-
 ## Architecture
 
 ```
@@ -27,17 +25,15 @@ Neovim
 
 ```
 
-
 ## Current language servers
 
-| Language | Server | Responsibility |
-|-|-|-|
-| Lua | lua_ls | Lua intelligence |
-| Python | pyright | Python intelligence |
-| Go | gopls | Go intelligence |
-| JS/TS | ts_ls | JavaScript and TypeScript intelligence |
-| Markdown | marksman | Markdown navigation |
-
+| Language | Server   | Responsibility                         |
+| -------- | -------- | -------------------------------------- |
+| Lua      | lua_ls   | Lua intelligence                       |
+| Python   | pyright  | Python intelligence                    |
+| Go       | gopls    | Go intelligence                        |
+| JS/TS    | ts_ls    | JavaScript and TypeScript intelligence |
+| Markdown | marksman | Markdown navigation                    |
 
 ## What LSP does not do
 
@@ -47,12 +43,9 @@ LSP is not responsible for:
 - linting
 - autosave
 
-
 Those are separate modules.
 
-
 ## Troubleshooting
-
 
 Check active servers:
 
@@ -62,7 +55,6 @@ Check active servers:
 
 ```
 
-
 Check health:
 
 ```
@@ -71,7 +63,6 @@ Check health:
 
 ```
 
-
 Check active clients:
 
 ```
@@ -79,7 +70,6 @@ Check active clients:
 :lua print(vim.inspect(vim.lsp.get_clients()))
 
 ```
-
 
 ## Design decision
 
@@ -92,4 +82,3 @@ The configuration keeps the dependency graph explicit.
 
 Mason installs binaries.
 Neovim configures them.
-

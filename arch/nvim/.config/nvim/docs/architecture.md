@@ -14,7 +14,6 @@ Examples:
 - treesitter.lua → syntax parsing
 - lsp.lua → language intelligence
 
-
 ## Plugin management
 
 Plugins are installed using Neovim's native vim.pack.
@@ -22,9 +21,11 @@ Plugins are installed using Neovim's native vim.pack.
 The responsibilities are separated:
 
 vim.pack:
+
 - Neovim plugins
 
 Mason:
+
 - language servers
 - formatters
 - linters
@@ -37,20 +38,22 @@ Core editor mappings live in:
 config/keymaps.lua
 
 Examples:
+
 - window navigation
 - insert mode shortcuts
 - editing behavior
-
 
 Plugin capability mappings live with the plugin module.
 
 Examples:
 
 navigation.lua:
+
 - file searching
 - project grep
 
 terminal.lua:
+
 - terminal toggle
 
 This avoids loading plugins only to register mappings.
