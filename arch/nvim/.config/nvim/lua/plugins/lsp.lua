@@ -1,59 +1,102 @@
-require('mason').setup()
+local M = {}
 
-local servers = {
-  -- Python: Multi-LSP Strategy
-  pyright = {
-    settings = {
-      pyright = { disableOrganizeImports = true }, -- Handled natively by Ruff
-      python = { analysis = { ignore = { '*' } } }, -- Let Ruff dictate lint warnings cleanly
+function M.setup()
+
+    require("mason").setup()
+
+
+    local servers = {
+        lua_ls = {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = {
+                            "vim",
+                        },
+                    },
+                },
+            },
+        },
+
+        gopls = {},
+
+        pyright = {},
+
+        ts_ls = {},
+
+        marksman = {},
     }
-  },
-  ruff = {}, -- Fast Rust-powered linter & formatter for Python
 
-  -- Go: Multi-LSP Strategy
-  gopls = {}, 
-  golangci_lint_ls = {}, -- Maps golangci-lint diagnostic diagnostics directly to code
 
-  -- Core Web Languages
-  ts_ls = {},              
-  marksman = {},           
-  lua_ls = {               
-    settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-  }
-}
+    for server, config in pairs(servers) do
 
--- Registry of dependencies that Mason automatically tracks
-local ensure_installed = vim.tbl_keys(servers)
-vim.list_extend(ensure_installed, {
-  'stylua',           -- Lua Formatter
-  'gofumpt',          -- Strict Go Formatter (Cleaner than standard gofmt)
-  'golangci-lint',    -- Go strict engine binary
-  'prettier',         -- JS/TS/Markdown formatter
-})
+        config.capabilities =
+            require("blink.cmp").get_lsp_capabilities(
+                config.capabilities
+            )
 
-require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
-require('mason-lspconfig').setup({
-  handlers = {
-    function(server_name)
-      local server = servers[server_name] or {}
-      server.capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
-      require('lspconfig')[server_name].setup(server)
-    end,
-  },
-})
 
--- Navigation Mappings Hook
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(event)
-    local map = function(keys, func, desc)
-      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
+        vim.lsp.config(server, config)
+
+        vim.lsp.enable(server)
+
     end
-    map('gd', require('fzf-lua').lsp_definitions, '[G]oto [D]efinition')
-    map('gr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
-    map('gI', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
-    map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame (Refactor Symbol)')
-    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-    map('K', vim.lsp.buf.hover, 'Hover Documentation')
-  end
-})
 
+
+    vim.api.nvim_create_autocmd(
+        "LspAttach",
+        {
+            callback = function(event)
+
+                local opts = {
+                    buffer = event.buf,
+                    silent = true,
+                }
+
+
+                vim.keymap.set(
+                    "n",
+                    "gd",
+                    vim.lsp.buf.definition,
+                    opts
+                )
+
+
+                vim.keymap.set(
+                    "n",
+                    "gr",
+                    vim.lsp.buf.references,
+                    opts
+                )
+
+
+                vim.keymap.set(
+                    "n",
+                    "K",
+                    vim.lsp.buf.hover,
+                    opts
+                )
+
+
+                vim.keymap.set(
+                    "n",
+                    "<leader>rn",
+                    vim.lsp.buf.rename,
+                    opts
+                )
+
+
+                vim.keymap.set(
+                    "n",
+                    "<leader>ca",
+                    vim.lsp.buf.code_action,
+                    opts
+                )
+
+            end,
+        }
+    )
+
+end
+
+return M

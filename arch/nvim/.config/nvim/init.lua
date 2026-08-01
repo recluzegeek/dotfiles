@@ -14,3 +14,5 @@ require("plugins.terminal").setup()
 
 require("plugins.treesitter").setup()
 require("plugins.completion").setup()
+
+require("plugins.lsp").setup()
