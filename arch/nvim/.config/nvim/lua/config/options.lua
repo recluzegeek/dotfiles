@@ -19,6 +19,38 @@ opt.hlsearch = false -- Clear highlights on new searches
 opt.mouse = 'a'
 opt.termguicolors = true
 opt.signcolumn = 'yes'
-opt.updatetime = 250
+opt.updatetime = 100
 opt.timeoutlen = 300
 opt.scrolloff = 10 -- Keep cursor centered contextually
+
+vim.opt.undofile = true -- Keep undo history preserverd even after nvim closure
+
+--------------------------------------------------
+-- Editor State
+--------------------------------------------------
+
+local state = vim.fn.stdpath 'state'
+
+vim.fn.mkdir(state .. '/swap', 'p')
+vim.fn.mkdir(state .. '/undo', 'p')
+
+vim.opt.swapfile = true
+vim.opt.directory = state .. '/swap'
+
+vim.opt.undofile = true
+vim.opt.undodir = state .. '/undo'
+
+vim.opt.undolevels = 10000
+vim.opt.undoreload = 10000
+
+--------------------------------------------------
+-- Saving
+--------------------------------------------------
+
+vim.opt.confirm = true
+-- vim.opt.autowrite = true
+-- vim.opt.autowriteall = true
+
+-- disable backup files - we rely on git, persistant undo & sessions
+vim.opt.backup = false
+vim.opt.writebackup = false
