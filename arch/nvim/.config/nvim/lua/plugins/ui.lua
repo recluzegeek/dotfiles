@@ -1,34 +1,59 @@
 local M = {}
 
 function M.setup()
-  local Snacks = require 'snacks'
 
-  Snacks.setup {
-    notifier = {
-      enabled = true,
-    },
+    local Snacks = require("snacks")
 
-    input = {
-      enabled = true,
-    },
+    Snacks.setup({
+        bigfile = {
+            enabled = true,
+        },
 
-    bigfile = {
-      enabled = true,
-    },
+        dashboard = {
+            enabled = true,
+        },
 
-    indent = {
-      enabled = true,
-    },
+        explorer = {
+            enabled = true,
+        },
 
-    scope = {
-      enabled = true,
-    },
-  }
+        input = {
+            enabled = true,
+        },
 
-  require('which-key').setup {
-    preset = 'modern',
-    delay = 300,
-  }
+        notifier = {
+            enabled = true,
+        },
+
+        terminal = {
+            enabled = true,
+        },
+
+        indent = {
+            enabled = true,
+        },
+
+        scope = {
+            enabled = true,
+        },
+    })
+
+
+    require("which-key").setup({
+        preset = "modern",
+        delay = 30,
+
+        triggers = {
+            {
+                "<leader>",
+                mode = {
+                    "n",
+                    "v",
+                },
+            },
+        },
+    })
+
 end
 
 return M
