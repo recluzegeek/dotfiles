@@ -34,6 +34,9 @@ local plugins = {
   {
     src = 'https://github.com/stevearc/conform.nvim',
   },
+  {
+    src = 'https://github.com/mfussenegger/nvim-lint',
+  },
 }
 
 vim.pack.add(plugins)
