@@ -30,6 +30,30 @@ Mason:
 - linters
 - debugging tools
 
+## Keymap ownership
+
+Core editor mappings live in:
+
+config/keymaps.lua
+
+Examples:
+- window navigation
+- insert mode shortcuts
+- editing behavior
+
+
+Plugin capability mappings live with the plugin module.
+
+Examples:
+
+navigation.lua:
+- file searching
+- project grep
+
+terminal.lua:
+- terminal toggle
+
+This avoids loading plugins only to register mappings.
 
 ## Loading order
 
