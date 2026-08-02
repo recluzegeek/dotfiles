@@ -17,3 +17,4 @@ require("plugins.completion").setup()
 
 require("plugins.lsp").setup()
 require("plugins.formatting").setup()
+require("plugins.autopairs").setup()
