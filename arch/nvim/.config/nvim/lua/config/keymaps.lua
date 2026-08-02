@@ -27,7 +27,7 @@ wk.add({
 	{ "<leader>x", group = "Diagnostics" },
 	{ "<leader>p", group = "Project" },
 	{ "<leader>u", group = "UI" },
-	{ "<leader>s", group = "Search / Session" },
+	{ "<leader>s", group = "Search" },
 })
 
 -- Move lines ---------------------------------------------------------------
@@ -126,3 +126,33 @@ map({ "n", "v" }, "C", '"_C', { desc = "Change to end of line without replacing 
 map({ "n", "v" }, "s", "d", { desc = "Cut text into register" })
 map("n", "ss", "dd", { desc = "Cut entire line into register" })
 map({ "n", "v" }, "S", "D", { desc = "Cut to end of line into register" })
+
+--------------------------------------------------
+-- Buffers
+--------------------------------------------------
+
+map("n", "<S-l>", "<cmd>bnext<CR>", {
+	desc = "Next buffer",
+})
+
+map("n", "<S-h>", "<cmd>bprevious<CR>", {
+	desc = "Previous buffer",
+})
+
+map("n", "<leader>bd", function()
+	local current = vim.api.nvim_get_current_buf()
+
+	vim.cmd("bnext")
+
+	if vim.api.nvim_get_current_buf() == current then
+		vim.cmd("enew")
+	end
+
+	vim.cmd("bdelete " .. current)
+end, {
+	desc = "Delete buffer",
+})
+
+map("n", "<leader>bo", "<cmd>%bdelete|edit#|bdelete#<CR>", {
+	desc = "Delete other buffers",
+})

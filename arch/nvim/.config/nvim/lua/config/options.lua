@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.number = true -- Show line numbers
 opt.relativenumber = true -- Relative line numbers for easy jumping
-opt.clipboard = 'unnamedplus' -- Sync with system clipboard
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
 
 -- Tabs & Indentation
 opt.tabstop = 4
@@ -16,9 +16,9 @@ opt.smartcase = true
 opt.hlsearch = false -- Clear highlights on new searches
 
 -- Comfort behaviors
-opt.mouse = 'a'
+opt.mouse = "a"
 opt.termguicolors = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.updatetime = 100
 opt.timeoutlen = 300
 opt.scrolloff = 10 -- Keep cursor centered contextually
@@ -29,19 +29,20 @@ vim.opt.undofile = true -- Keep undo history preserverd even after nvim closure
 -- Editor State
 --------------------------------------------------
 
-local state = vim.fn.stdpath 'state'
+local state = vim.fn.stdpath("state")
 
-vim.fn.mkdir(state .. '/swap', 'p')
-vim.fn.mkdir(state .. '/undo', 'p')
+vim.fn.mkdir(state .. "/swap", "p")
+vim.fn.mkdir(state .. "/undo", "p")
 
 vim.opt.swapfile = true
-vim.opt.directory = state .. '/swap'
+vim.opt.directory = state .. "/swap"
 
 vim.opt.undofile = true
-vim.opt.undodir = state .. '/undo'
+vim.opt.undodir = state .. "/undo"
 
 vim.opt.undolevels = 10000
 vim.opt.undoreload = 10000
+vim.opt.history = 1000
 
 --------------------------------------------------
 -- Saving
