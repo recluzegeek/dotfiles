@@ -102,3 +102,27 @@ map("n", "*", "*zzzv", {
 map("n", "#", "#zzzv", {
 	desc = "Search word backward centered",
 })
+
+-- Register safety ----------------------------------------------------------
+
+-- Delete single characters without overwriting yank register
+map("n", "x", '"_x', { desc = "Delete character without replacing register" })
+map("n", "X", '"_X', { desc = "Delete backward without replacing register" })
+
+-- Delete motions/text-objects in Normal mode
+map({ "n", "v" }, "d", '"_d', { desc = "Delete without replacing register" })
+map({ "n", "v" }, "D", '"_D', { desc = "Delete to end of line without replacing register" })
+
+-- Visual mode x
+map("v", "x", '"_d', { desc = "Delete selection without replacing register" })
+
+-- Change text without overwriting yank register
+map({ "n", "v" }, "c", '"_c', { desc = "Change text without replacing register" })
+map({ "n", "v" }, "C", '"_C', { desc = "Change to end of line without replacing register" })
+
+-- Cut Functionality (Using 's' for Snip/Slice) -----------------------------
+
+-- Use 's' to Cut text in Normal and Visual modes (replaces default substitute)
+map({ "n", "v" }, "s", "d", { desc = "Cut text into register" })
+map("n", "ss", "dd", { desc = "Cut entire line into register" })
+map({ "n", "v" }, "S", "D", { desc = "Cut to end of line into register" })
